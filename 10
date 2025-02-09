@@ -1,0 +1,35 @@
+import math
+
+def f(x):
+  return x*2 - 4*x + 7
+
+
+def find_min_max(func, start, end, step):
+
+    min_val = float('inf') 
+    max_val = float('-inf') 
+    min_x = None
+    max_x = None
+
+    for x in [start + i * step for i in range(math.ceil((end - start) / step) + 1)]: 
+      if start <= x <= end: 
+        y = func(x)
+        if y < min_val:
+            min_val = y
+            min_x = x
+        if y > max_val:
+            max_val = y
+            max_x = x
+
+    return min_val, max_val, min_x, max_x
+
+
+start_interval = float(input("Введите начало интервала: "))
+end_interval = float(input("Введите конец интервала: "))
+step_size = float(input("Введите шаг: "))
+
+
+min_val, max_val, min_x, max_x = find_min_max(f, start_interval, end_interval, step_size)
+
+print(f"Минимальное значение функции: {min_val} в точке x = {min_x}")
+print(f"Максимальное значение функции: {max_val} в точке x = {max_x}")
