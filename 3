@@ -1,0 +1,18 @@
+def is_product_divisible(number, a):
+    if a == 0 or number <= 0 or not isinstance(number, int) or not isinstance(a, int):
+        return False
+
+    product = 1
+    for digit in str(number):
+        product *= int(digit)
+
+    return product % a == 0
+
+
+# Примеры использования:
+print(is_product_divisible(123, 3)) # True (1 * 2 * 3 = 6, 6 % 3 == 0)
+print(is_product_divisible(124, 3)) # False (1 * 2 * 4 = 8, 8 % 3 != 0)
+print(is_product_divisible(12345, 5)) # True (1*2*3*4*5 = 120, 120 % 5 ==0)
+print(is_product_divisible(100, 0)) # False (деление на 0)
+print(is_product_divisible(-123, 3)) #False (отрицательное число)
+print(is_product_divisible(123, "a")) #False (не целое число)
