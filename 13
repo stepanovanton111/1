@@ -1,0 +1,19 @@
+def sum_even_indices_loop(arr):
+    total = 0
+    for i in range(0, len(arr), 2):
+        total += arr[i]
+    return total
+
+n = int(input("Введите количество элементов в массиве: "))
+arr = []
+for i in range(n):
+    while True:
+        try:
+            num = float(input(f"Введите элемент {i+1}: "))
+            arr.append(num)
+            break
+        except ValueError:
+            print("Некорректный ввод. Попробуйте ещё раз.")
+
+result = sum_even_indices_loop(arr)
+print(f"Сумма элементов на четных позициях: {result}")
