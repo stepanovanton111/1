@@ -1,0 +1,25 @@
+def get_card_rank(number):
+    if not 2 <= number <= 14:
+        return "Некорректный номер карты"
+
+    ranks = {
+        11: "Валет",
+        12: "Дама",
+        13: "Король",
+        14: "Туз",
+    }
+
+    if number in ranks:
+        return ranks[number]
+    else:
+        return str(number) # Для чисел от 2 до 10
+
+
+# Примеры использования:
+print(get_card_rank(11)) # Вывод: Валет
+print(get_card_rank(12)) # Вывод: Дама
+print(get_card_rank(13)) # Вывод: Король
+print(get_card_rank(14)) # Вывод: Туз
+print(get_card_rank(7)) # Вывод: 7
+print(get_card_rank(1)) # Вывод: Некорректный номер карты
+print(get_card_rank(15)) # Вывод: Некорректный номер карты
