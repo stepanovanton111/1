@@ -1,0 +1,22 @@
+import math
+    
+    def parallelepiped_calculations(a, b, c):
+        if a <= 0 or b <= 0 or c <= 0:
+            print("Длины сторон должны быть положительными числами.")
+            return None
+    
+        volume = a * b * c
+        lateral_surface_area = 2 * (a * c + b * c) #Площадь боковой поверхности = 2*(площадь грани 1 + площадь грани 2)
+        return {'volume': volume, 'lateral_surface_area': lateral_surface_area}
+    
+    # Пример использования:
+    a = 5
+    b = 10
+    c = 2
+    
+    result = parallelepiped_calculations(a, b, c)
+    
+    if result:
+        print(f"Объем прямоугольного параллелепипеда: {result['volume']}")
+        print(f"Площадь боковой поверхности прямоугольного параллелепипеда: {result['lateral_surface_area']}")
+        print("Углы между гранями: 90 градусов (прямые углы)")
