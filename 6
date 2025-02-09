@@ -1,0 +1,32 @@
+def get_geological_era(year):
+    if not isinstance(year, (int, float)):
+        return "Некорректный ввод года"
+    
+    year = int(year) 
+
+    if year >= 4500:
+        return "Катархей"
+    elif year >= 3500:
+        return "Архей"
+    elif year >= 2500:
+        return "Протерозой"
+    elif year >= 534:
+        return "Палеозой"
+    elif year >= 248:
+        return "Мезозой"
+    elif year >= 65:
+        return "Кайнозой"
+    else:
+        return "Неизвестная эра"
+
+
+# Примеры:
+print(get_geological_era(4500)) # Вывод: Катархей
+print(get_geological_era(3500)) # Вывод: Архей
+print(get_geological_era(2500)) # Вывод: Протерозой
+print(get_geological_era(534))   # Вывод: Палеозой
+print(get_geological_era(248))   # Вывод: Мезозой
+print(get_geological_era(65))    # Вывод: Кайнозой
+print(get_geological_era(50))    # Вывод: Неизвестная эра
+print(get_geological_era("abc")) # Вывод: Некорректный ввод года
+print(get_geological_era(2500.5)) # Вывод: Протерозой
