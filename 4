@@ -1,0 +1,20 @@
+def triangle_area(x1, y1, x2, y2, x3, y3):
+    area = 0.5 * abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2))
+    return area
+
+
+# Примеры:
+x1, y1 = 1, 1
+x2, y2 = 4, 5
+x3, y3 = 7, 2
+
+area = triangle_area(x1, y1, x2, y2, x3, y3)
+print(f"Площадь треугольника: {area}") # Вывод: 7.5
+
+
+x1, y1 = 1, 1
+x2, y2 = 2, 2
+x3, y3 = 3, 3 
+
+area = triangle_area(x1, y1, x2, y2, x3, y3)
+print(f"Площадь треугольника: {area}") # Вывод: 0
